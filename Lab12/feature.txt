@@ -1,0 +1,27 @@
+﻿Name: Amirul Azizol (32619898)
+Feature: Sorting the Book list by price or title
+
+
+New View components:
+The view component that is involved with this feature is the existing recyclerView on the homepage. A new mBookViewModel is created whenever we press a button to filter, where the BookViewModel holds the filtered data, and the recyclerView shows new data.
+
+
+Note that one limitation of my feature is that it doesn't include the listView. This appears when the user clicks on the button to "List All", and will not have the filter applied to it.
+
+
+Implementation: 
+1. Add the SQL query to the BookDao interface file. This was done by taking the existing query to get all books, and using "order by" to sort them. I added two queries which correspond to price filtering and title filtering.
+2. Add the two methods in the BookRepository class file. These simply return the result of the BookDao interface's SQL query in the database, as a LiveData object.
+3. Add the two methods in the BookViewModel class file. Again this just uses the BookRepository repository's method to get the books filtered by title or price.
+4. Add two buttons to the drawer to represent the two options of filtering by title and price.
+5. Add two methods to the navigationListener which call two other helper methods in the Activity; these methods create a new instance of the BookViewModel, but using the sorted data. Thus, the order that books appear in the recyclerView will change based on their title or price.
+
+
+Steps for the user:
+1. By default, the books on the main page are sorted by ID. (This is also the permanent sorting order for the listView in the second main activity).
+
+
+2. There are navigation buttons in the drawer which can filter by price or by title.
+
+
+3. If either of the buttons are clicked, a filter will be applied to the existing list of books in the recyclerView and any new books added will follow this filter.

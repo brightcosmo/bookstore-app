@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/addbooks"
+        android:title="Add Books" />
+    <item
+        android:id="@+id/removelastbook"
+        android:title="Remove Last Book" />
+    <item
+        android:id="@+id/removeallbooks"
+        android:title="Remove All Books" />
+    <item
+        android:id="@+id/ListAll"
+        android:title="List All" />
+    <item
+        android:id="@+id/filterPrice"
+        android:title="Filter by Price" />
+    <item
+        android:id="@+id/filterTitle"
+        android:title="Filter by Title" />
+    <item
+        android:id="@+id/deleteexpensive"
+        android:title="Delete Expensive Books" />
+    <item
+        android:id="@+id/deleteunknown"
+        android:title="Delete Unknown" />
+    <item
+        android:id="@+id/close"
+        android:title="Close" />
+</menu>
